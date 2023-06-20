@@ -1,0 +1,98 @@
+:root {
+--cell-size: 4em;
+}
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.figure {
+  width: calc(var(--cell-size) * 0.8);
+  height: calc(var(--cell-size) * 0.8);
+  border-radius: calc((var(--cell-size) * 0.8) / 2);
+}
+.selected {
+  border-color: yellow !important;
+  border-width: 2px;;
+  background-color: yellow !important;
+}
+.highlighted {
+  background-color: rgba(252, 252, 141, 0.5) !important;
+}
+.isDame {
+  border-style: dashed !important;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  width: calc(var(--cell-size) * 10);
+  height: var(--cell-size);
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coordinates-row {
+  display: flex;
+  width: calc(var(--cell-size) * 10);
+  height: calc(var(--cell-size) + 2px);
+  justify-content: center;
+}
+.coordinates-cell {
+  width: calc(var(--cell-size) + 2px);
+  height: calc(var(--cell-size) + 2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.Black {
+  background-color: #000;
+}
+
+.figure.Black {
+      border: 1px solid white;
+/*
+      background-image: url('../assets/jew.png');
+    background-size: contain;
+    */
+}
+
+.White {
+  background-color: #fff;
+}
+
+.reverse {
+  transform: rotate(180deg);
+}
+
+@keyframes yoyo {
+  from { transform: rotate(  0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+.figure.White {
+    border: 1px solid black;
+    /*
+    background-image: url('../assets/borisan.png');
+    background-size: contain;
+          animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-name: yoyo;
+  animation-timing-function: linear;
+*/
+}
+
+.restart-btn {
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+}
